@@ -1,0 +1,17 @@
+{
+  "name": "cypress-viewport-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "local-server /static 9000",
+    "test": "cypress run --headless --browser chrome",
+    "test-d": "docker run -it -v $PWD:/cypress -w /cypress --entrypoint=cypress cypress/included:3.8.2 run --config baseUrl=http://host.docker.internal:9000 --headless --browser chrome"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^3.8.2",
+    "cypress-image-snapshot": "^3.1.1"
+  }
+}
